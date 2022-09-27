@@ -46,13 +46,50 @@ void Date::checarfech(bool days, bool months, bool yea)
 {
 	if (days == true && months == true && yea == true)
 	{
-		cout << "fecha valida";
+		cout << "fecha valida\n";
 
 	}else {
 		cout << "fecha invalida";
 	}
+}   
+Date& Date::operator++()
+{
+	
+	AddDays(1);
+	return *this;
 }
 
+void Date::AddDays(int nDaysToAdd)
+{
+	day += nDaysToAdd;
+	if (day > 31)
+	{
+		AddMonths(day / 31);
+
+		day %= 31; 
+	}
+}
+
+void Date::AddMonths(int nMonthsToAdd)
+{
+	month += nMonthsToAdd;
+
+	if (month > 12)
+	{
+		AddYears(month / 12);
+
+		month %= 12;
+	}
+}
+
+void Date::AddYears(int m_nYearsToAdd)
+{
+	years += m_nYearsToAdd;
+}
+void Date::showDate()
+{
+	cout << "La fecha es: " << day << "/" << month << "/" << years << "\n";
+}
 
 
 

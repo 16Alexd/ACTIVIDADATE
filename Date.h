@@ -17,5 +17,11 @@ public:
 	bool d();
 
 	void checarfech(bool day, bool moth, bool year);
+	Date& operator ++ ();
+	void AddDays(int nDaysToAdd);
+	void AddMonths(int nMonthsToAdd);
+	void AddYears(int m_nYearsToAdd);
+	void showDate();
 };
+
 
