@@ -12,9 +12,10 @@ private:
 
 public:
 	Date(int day, int month, int years);
-	
+	bool y();
+	bool m();
+	bool d();
 
-
-
+	void checarfech(bool day, bool moth, bool year);
 };
 
